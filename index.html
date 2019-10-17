@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventure Quest</title>
+    <link rel="stylesheet" href="common/main.css">
+    <link rel="stylesheet" href="home/home.css">
+</head>
+<body>
+    <header>
+        <img src="assets/alchemy-logo.png" alt="Alchemy Code Lab Logo">
+        <h1>Adventure Quest</h1>
+    </header>
+    
+    <main> 
+        <h2>
+            Start Here Adventurer, If You Dare!
+        </h2>
+        <form id="user-sign-up">
+            <p class="text-prompt">
+                <label for="name">Your Adventurer Name:</label>
+                <input id="name" name="name" required>
+            </p>
+            <fieldset>
+                <legend>Pick Your Race:</legend>
+                <p id="avatars">
+                    <label>
+                        <input type="radio" name="race" required value="wizard">
+                        <img src="assets/avatars/wizard.png">
+                        Wizard
+                    </label>
+                    <label>
+                        <input type="radio" name="race" required value="elf">
+                        <img src="assets/avatars/elf.png">
+                        Elf
+                    </label>
+                    <label>
+                        <input type="radio" name="race" required value="cleric">
+                        <img src="assets/avatars/cleric.png">
+                        Cleric
+                    </label>
+                    <label>
+                        <input type="radio" name="race" required value="ranger">
+                        <img src="assets/avatars/ranger.png">
+                        Ranger
+                    </label>
+                </p>
+            </fieldset>
+            <button>Start Adventure Quest</button>
+        </form>
+    </main>
+
+    <footer>
+        <cite>
+            Icons designed by Freepik from Flaticon
+        </cite>
+    </footer>
+
+    <script type="module" src="home/home.js"></script>
+</body>
+</html>
