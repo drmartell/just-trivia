@@ -1,184 +1,123 @@
 // quests[0].choices[0].description; ==> 'negotiate with them'
 
-
-const monsters = {
-    id: 'monsters',
-    title: 'A Den of Monsters',
-    map: {
-        top: '89%',
-        left: '44%'
-    },
-    image: 'monsters.jpg',
-    audio: 'monsters.wav',
-    action: 'monster-scream.wav',
-    description: `
-        You enter the quest chamber only to be confronted by a hoard of
-        monsters. And they look hungry. What do you do?
-    `,
-    choices: [{
-        id: 'negotiate',
-        description: 'Negotiate with them',
-        result: `
-            Knowing the monsters are not too bright, you offer to go buy them all
-            turkey dinners from the village pub. They give you 35 gold for meals
-            that will never be delivered. I hope you can live with yourself. 
-        `,
-        hp: 0,
-        gold: 35
-    }, {
-        id: 'fight',
-        description: 'Fiiiiiggghhhttt!',
-        result: `
-            Brandishing your sword you let out a warrior's cry and charge into the monsters
-            hacking and slashing. Before long you stand panting gazing across the bodies of
-            your vanquished foes. The bad news is you take 30 hp damage. The good news is you
-            find 50 gold.
-        `,
-        hp: -30,
-        gold: 50
-    }, {
-        id: 'run',
-        description: 'Run away like good Sir Robin',
-        result: `
-            As you make a dash for the door a giant spider descends and take a bite of flesh,
-            causing 50 hp damage.
-        `,
-        hp: -50,
-        gold: 0
-    }]
-};
-
-const dragon = {
-    id: 'dragon',
-    title: 'A Problem Dragon',
-    map: {
-        top: '57%',
-        left: '67%'
-    },
-    image: 'dragon.jpg',
-    audio: 'dragon.wav',
-    action: 'dragon-growl.aiff',
-    description: `
-        You travel to a nearby village you have heard is being
-        terrorized by a dragon. Sure enough as you rent a room
-        in a local inn, you go outside and see the dragon about
-        to lay seige! What do you do?
-    `,
-    choices: [{
-        id: 'run',
-        description: 'Get the hell out of the village',
-        result: `
-            You high tail it in the opposite direction. Luckily,
-            in the panic you find a bag on the ground with 15 gold.
-            Unluckily, you trip over a discarded wagon wheel on your
-            way out of town and take 40 hp damage. 
-        `,
-        hp: -35,
-        gold: 35
-    }, {
-        id: 'fight',
-        description: 'Fiiiiiggghhhttt!',
-        result: `
-            You attempt to charge towards the dragon, who sees you approach
-            and let's loose a fireball. You wake up the next morning and the
-            village has been completely burned to the ground.
-            Oh, and you take 45 hp damage.
-        `,
-        hp: -45,
-        gold: 0
-    }, {
-        id: 'archer',
-        description: 'Emulate that guy from LOR who shot an arrow',
-        result: `
-            Inspired by the legend of Bard the Bowman, you notice a
-            stunned archer standing nearby and take their bow and quiver,
-            climb to the top of a tall tower and take aim. On the dragon's
-            next pass you steady your aim and let one fly. Amazingly,
-            you strike the dragon in the eye, piercing into the brain and
-            killing the dragon instantly. The villagers declare you their hero
-            and award you 90 gold.
-        `,
-        hp: 0,
-        gold: 90
-    }]
-};
-
-const treasure = {
-    id: 'treasure',
-    title: 'The Golden Treasure',
-    map: {
-        top: '31%',
-        left: '5%'
-    },
-    image: 'treasure-chests.png',
-    audio: 'treasure-chests.wav',
-    action: 'chest-opening.wav',
-    description: `
-        As you enter the quest chamber you notice three chests before you.
-        Just as you start to imagine the wealth, you see a giant serpent
-        emerge from the back of the chamber. You'll need to make a run for it,
-        but you have time to open one chest before you take off. Which one 
-        do you choose?
-    `,
-    choices: [{
-        id: 'wooden',
-        description: 'A Wooden Chest',
-        result: 'You grab 40 gold pieces!',
-        hp: 0,
-        gold: 40
-    }, {
-        id: 'golden',
-        description: 'A Golden Chest',
-        result: 'Oh no! The chest is booby trapped with poison and you take 50 hp damage',
-        hp: -50,
-        gold: 0
-    }, {
-        id: 'jeweled',
-        description: 'A Jeweled Chest',
-        result: 'A warm light engulfs you and you gain 35 hp',
-        hp: 35,
-        gold: 0
-    }]
-};
-
-const quests = [monsters, treasure, dragon, {
-    id: 'pleasure',
-    title: 'The Golden Pleasure',
-    map: {
-        top: '61%',
-        left: '10%'
-    },
-    image: 'treasure-chests.png',
-    audio: 'treasure-chests.wav',
-    action: 'chest-opening.wav',
-    description: `
-        As you enter the quest chamber you notice three chests before you.
-        Just as you start to imagine the wealth, you see a giant serpent
-        emerge from the back of the chamber. You'll need to make a run for it,
-        but you have time to open one chest before you take off. Which one 
-        do you choose?
-    `,
-    choices: [{
-        id: 'wooden',
-        description: 'WOW',
-        result: 'You grab 40 gold pieces!',
-        hp: 0,
-        gold: 40
-    }, {
-        id: 'golden',
-        description: 'NOW',
-        result: 'Oh no! The chest is booby trapped with poison and you take 50 hp damage',
-        hp: -50,
-        gold: 0
-    }, {
-        id: 'jeweled',
-        description: 'POW',
-        result: 'A warm light engulfs you and you gain 35 hp',
-        hp: 35,
-        gold: 0
-    }
+const questions = [{
+    category: 'Science: Computers',
+    type: 'multiple',
+    difficulty: 'hard',
+    question: 'How many Hz does the video standard PAL support?',
+    correct_answer: '50',
+    incorrect_answers: [
+        '59',
+        '60',
+        '25'
     ]
-}
+},
+{
+    category: 'Science: Computers',
+    type: 'multiple',
+    difficulty: 'medium',
+    question: 'On which computer hardware device is the BIOS chip located?',
+    correct_answer: 'Motherboard',
+    incorrect_answers: [
+        'Hard Disk Drive',
+        'Central Processing Unit',
+        'Graphics Processing Unit'
+    ]
+},
+{
+    category: 'Science: Computers',
+    type: 'multiple',
+    difficulty: 'medium',
+    question: 'Which coding language was the #1 programming language in terms of usage on GitHub in 2015?',
+    correct_answer: 'JavaScript',
+    incorrect_answers: [
+        'C#',
+        'Python',
+        'PHP'
+    ]
+},
+{
+    category: 'Science: Computers',
+    type: 'multiple',
+    difficulty: 'medium',
+    question: 'What is the name of the default theme that is installed with Windows XP?',
+    correct_answer: 'Luna',
+    incorrect_answers: [
+        'Neptune',
+        'Whistler',
+        'Bliss'
+    ]
+},
+{
+    category: 'Science: Computers',
+    type: 'multiple',
+    difficulty: 'medium',
+    question: 'In CSS, which of these values CANNOT be used with the &quot;position&quot; property?',
+    correct_answer: 'center',
+    incorrect_answers: [
+        'static',
+        'absolute',
+        'relative'
+    ]
+},
+{
+    category: 'Science: Computers',
+    type: 'multiple',
+    difficulty: 'medium',
+    question: 'In computing terms, typically what does CLI stand for?',
+    correct_answer: 'Command Line Interface',
+    incorrect_answers: [
+        'Common Language Input',
+        'Control Line Interface',
+        'Common Language Interface'
+    ]
+},
+{
+    category: 'Science: Computers',
+    type: 'multiple',
+    difficulty: 'hard',
+    question: 'Who is the original author of the realtime physics engine called PhysX?',
+    correct_answer: 'NovodeX',
+    incorrect_answers: [
+        'Ageia',
+        'Nvidia',
+        'AMD'
+    ]
+},
+{
+    category: 'Science: Computers',
+    type: 'multiple',
+    difficulty: 'hard',
+    question: 'Which of the following is the oldest of these computers by release date?',
+    correct_answer: 'TRS-80',
+    incorrect_answers: [
+        'Commodore 64',
+        'ZX Spectrum',
+        'Apple 3'
+    ]
+},
+{
+    category: 'Science: Computers',
+    type: 'boolean',
+    difficulty: 'medium',
+    question: 'Linus Sebastian is the creator of the Linux kernel, which went on to be used in Linux, Android, and Chrome OS.',
+    correct_answer: 'False',
+    incorrect_answers: [
+        'True'
+    ]
+},
+{
+    category: 'Science: Computers',
+    type: 'multiple',
+    difficulty: 'easy',
+    question: 'Which programming language shares its name with an island in Indonesia?',
+    correct_answer: 'Java',
+    incorrect_answers: [
+        'Python',
+        'C',
+        'Jakarta'
+    ]
+},
 ];
 
-export default quests;
+export default questions;

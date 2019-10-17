@@ -15,12 +15,8 @@ const goldResult = scoreGold(user.gold);
 const hpMessage = hpMessages[hpResult];
 
 let goldMessages = null;
-if (hpResult === 'dead') {
-    goldMessages = deadGoldMessages;
-}
-else {
-    goldMessages = aliveGoldMessages;
-}
+if (hpResult === 'dead') goldMessages = deadGoldMessages;
+else goldMessages = aliveGoldMessages;
 
 const goldMessage = goldMessages[goldResult];
 
