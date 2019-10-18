@@ -1,5 +1,7 @@
 import { saveUser } from '../data/api.js';
-import { makeUser } from './make-user.js';
+import { makeUser, resetUser } from '../common/utils.js';
+
+resetUser();
 
 const userSignUp = document.getElementById('user-sign-up');
 // const radioButtonGroup = document.getElementsByName('radioList');
@@ -16,11 +18,13 @@ boss1.addEventListener('click', bossEvent);
 boss2.addEventListener('click', bossEvent);
 boss3.addEventListener('click', bossEvent);
 
-userSignUp.addEventListener('submit', function(event) {
+userSignUp.addEventListener('submit', (event) => {
     event.preventDefault();
     const formData = new FormData(userSignUp);
     const user = makeUser(formData);
     saveUser(user);
-    // window.location = 'map';
-    window.location = 'quiz';
+
+    const bossId = formData.get('opponent');
+    console.log('bossId: ' + bossId);
+    window.location = 'quiz/?boss=' + bossId;
 });
