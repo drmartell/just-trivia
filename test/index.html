@@ -12,6 +12,39 @@
   <body>
     <div id="qunit"></div>
     <div id="qunit-fixture"></div>
+      <script>
+        function storageMock() {
+
+          var storage = {};
+          
+          return {
+              setItem: function (key, value) {
+                  storage[key] = value || '';
+              },
+              getItem: function (key) {
+                  return key in storage ? storage[key] : null;
+              },
+              removeItem: function (key) {
+                  delete storage[key];
+              },
+              get length() {
+                  return Object.keys(storage).length;
+              },
+              key: function (i) {
+                  var keys = Object.keys(storage);
+                  return keys[i] || null;
+              }
+          };
+        }
+        
+        const sMockNotifier = document.createElement('h4');
+        h4.textContent = '[NOTE: Local Storage Mock In Use For Tests]';
+        document.querySelector('body').appendChild(sMockNotifier);
+
+        Object.defineProperty(window, 'localStorage', {
+            value: storageMock(),
+        });
+      </script>
     <script src="https://code.jquery.com/qunit/qunit-2.9.1.js"></script>
     <script type="module" src="tests.js"></script>
   </body>

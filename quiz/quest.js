@@ -33,7 +33,7 @@ for (let index = 0; index < quest.choices.length; index++) {
     choices.appendChild(choiceDOM);
 }
 
-choiceForm.addEventListener('submit', function (event) {
+choiceForm.addEventListener('submit', function(event) {
     event.preventDefault();
 
     const formData = new FormData(choiceForm);

@@ -1,22 +1,16 @@
-// build a simple JS user out of the weird formdata object
-function makeUser(formData) {
-    const user = {
+export const makeUser = (formData) => {
+    return {
         name: formData.get('name'),
-        race: formData.get('race'),
-        hp: 35,
-        gold: 0,
-        completed: {}
+        opponent: formData.get('opponent'),
+        score: 0,
+        completed: {},
     };
+};
 
-    return user;
-}
-
-export const newMakeUser = (formData) => ({
-    name: formData.get('name'),
-    race: formData.get('race'),
-    hp: 35,
-    gold: 0,
-    completed: {}
-});
-
-export default makeUser;
+// export const newMakeUser = (formData) => ({
+//     name: formData.get('name'),
+//     race: formData.get('race'),
+//     hp: 35,
+//     gold: 0,
+//     completed: {}
+// });
