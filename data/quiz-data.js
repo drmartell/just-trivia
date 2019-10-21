@@ -1,6 +1,4 @@
-// quests[0].choices[0].description; ==> 'negotiate with them'
-
-const questions = [{
+export const questions = [{
     category: 'Science: Computers',
     type: 'multiple',
     difficulty: 'hard',
