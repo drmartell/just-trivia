@@ -98,16 +98,6 @@ const questions = [{
 },
 {
     category: 'Science: Computers',
-    type: 'boolean',
-    difficulty: 'medium',
-    question: 'Linus Sebastian is the creator of the Linux kernel, which went on to be used in Linux, Android, and Chrome OS.',
-    correct_answer: 'False',
-    incorrect_answers: [
-        'True'
-    ]
-},
-{
-    category: 'Science: Computers',
     type: 'multiple',
     difficulty: 'easy',
     question: 'Which programming language shares its name with an island in Indonesia?',
