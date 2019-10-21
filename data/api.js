@@ -1,11 +1,13 @@
-export function saveUser(user) {
-    const json = JSON.stringify(user);
-    localStorage.setItem('user', json);
-}
+// I GENERALIZED THESE SO THAT THEY CAN BE USED TO SAVE THE
+// HUMAN PLAYER OR THE COMPUTER
+export const savePlayer = (playerKey, player) => {
+    const json = JSON.stringify(player);
+    localStorage.setItem(playerKey, json);
+};
 
-export function getUser() {
-    const json = localStorage.getItem('user');
+export const getPlayer = (player) => {
+    const json = localStorage.getItem(player);
     if (!json) return null;
-    const user = JSON.parse(json);
-    return user;
-}
+    const thisPlayer = JSON.parse(json);
+    return thisPlayer;
+};

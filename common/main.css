@@ -60,3 +60,11 @@ button {
     font-size: 1.2em;
     font-weight: bolder;
 }
+
+#header-div {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: white;
+    margin: 12px;
+}

@@ -1,5 +1,5 @@
 import loadProfile from '../common/load-profile.js';
-import { getUser, saveUser } from '../data/api.js';
+import { getPlayer, saveUser } from '../data/api.js';
 import quests from '../data/quest-data.js';
 import createChoice from './create-choice.js';
 import findById from '../common/find-by-id.js';

@@ -1,5 +1,6 @@
-import { getUser } from '../data/api.js';
+import { getPlayer } from '../data/api.js';
 import isDead from './is-dead.js';
+import { USER_KEY } from '../home/home.js';
 
 function loadProfile() {
     const name = document.getElementById('name');
@@ -7,7 +8,7 @@ function loadProfile() {
     const hp = document.getElementById('hp');
     const gold = document.getElementById('gold');
 
-    const user = getUser();
+    const user = getPlayer(USER_KEY);
 
     if (!user) window.location = './';
 

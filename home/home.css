@@ -33,6 +33,7 @@
 #avatars input, #avatars img {
     margin: 0 7px;
     width: 25%;
+    max-width: 150px;
     border-radius: 22px;
     height: auto;
 }

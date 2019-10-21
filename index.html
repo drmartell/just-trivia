@@ -4,15 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bootcamp-inator</title>
+    <link rel="stylesheet" href="./common/_resets.css">
     <link rel="stylesheet" href="common/main.css">
     <link rel="stylesheet" href="home/home.css">
 </head>
 <body>
-    <header>
+    <script type="module" src="./common/header.js"></script>
+    <header></header>
+    <!-- <header>
         <h1>Bootcamper-inator</h1>
         <img src="../assets/images/Heinz_Doofenshmirtz.png" alt="Heinz Doofenshmirtz">
         <h2>A computer trivia game for those whose ego's can withstand it!</h2>
-    </header>
+    </header> -->
     
     <main>
         <h2>
@@ -29,17 +32,17 @@
                 <p id="avatars">
                     <label>
                         <input type="radio" name="opponent" required value="boss1">
-                        <img id="boss1" src="assets/images/bc-nerd.png">
+                        <img id="boss1-img" src="assets/images/bc-nerd.png">
                         Self-taught programmer
                     </label>
                     <label>
                         <input type="radio" name="opponent" required value="boss2" disabled>
-                        <img id="boss2" src="assets/images/alchemy-nerd.png">
+                        <img id="boss2-img" src="assets/images/alchemy-nerd.png">
                         Fellow bootcamper
                     </label>
                     <label>
                         <input type="radio" name="opponent" required value="boss3" disabled>
-                        <img id="boss3" src="assets/images/trivia-nerd.png">
+                        <img id="boss3-img" src="assets/images/trivia-nerd.png">
                         CS Degree holder
                     </label>
                 </p>
@@ -54,6 +57,6 @@
         </cite>
     </footer>
 
-    <script type="module" src="home/home.js"></script>
+    <script type="module" src="./home/home.js"></script>
 </body>
 </html>
