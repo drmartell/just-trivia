@@ -1,8 +1,8 @@
 import { getPlayer } from '../data/api.js';
 import { USER_KEY, OPPONENT_KEY } from '../home/home.js';
 
-const thisUser = getPlayer(USER_KEY);
-const thisBoss = getPlayer(OPPONENT_KEY);
+let thisUser = getPlayer(USER_KEY);
+let thisBoss = getPlayer(OPPONENT_KEY);
 const headerDiv = document.createElement('div');
 headerDiv.id = 'header-div';
 const headerElement = document.getElementsByTagName('header')[0];
@@ -24,6 +24,8 @@ headerElement.appendChild(headerDiv);
 
 export function updateHeader() {
     const theHeader = document.getElementById('header-div');
+    thisUser = getPlayer(USER_KEY);
+    thisBoss = getPlayer(OPPONENT_KEY);
 
     if (thisUser && thisBoss) {
         console.log('updating');

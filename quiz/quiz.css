@@ -34,6 +34,12 @@ body{
 
 ul {
     list-style: circle;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    float: none;
 }
 
 input[type="radio"] {
@@ -41,5 +47,26 @@ input[type="radio"] {
 }
 
 label {
+    display: block;
     margin: 0 12px;
+    cursor: pointer;
+}
+
+#quiz {
+    display: inline-block;
+    width: 40%;
+}
+
+#quiz-boss {
+    display: inline-block;
+    width: 40%;
+}
+
+#quiz-boss > label > input[type="radio"] {
+    /* list-style-type : none; */
+    /* visibility: hidden; */
+}
+
+#quiz-boss > label + input:checked {
+    background: rgb(11, 150, 115);
 }

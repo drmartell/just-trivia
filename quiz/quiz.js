@@ -9,12 +9,12 @@ const searchParams = new URLSearchParams(window.location.search);
 const bossId = searchParams.get('boss');
 
 if (!bossId) window.location = '../';
-const bossCorrectPct = bossesDict[bossId].correctPct;
 
 const quizHeaderH2 = document.getElementById('quiz-header-h2');
 quizHeaderH2.textContent = `You Vs. ` + bossesDict[bossId].name;
 
 const quizContainer = document.getElementById('quiz');
+const quizBossContainer = document.getElementById('quiz-boss');
 const resultsContainer = document.getElementById('results');
 const submitButton = document.getElementById('submit');
 let currentQuestion = 0;
@@ -26,11 +26,12 @@ function showQuestion(thisQuestion) {
     shuffle(possibleAnswers);
     possibleAnswers.forEach((answer) => {
         answersHTML +=
-        '<label>'
-        + `<input type="radio" name="question" value="` + answer + `">` + answer
+        '<label for="' + answer + '">'
+        + `<input type="radio" name="question" id="` + answer + `"value="` + answer + `">` + answer
         + '</label>';
     });
     quizContainer.innerHTML = thisQuestion.question + '<br>' + answersHTML;
+    quizBossContainer.innerHTML = thisQuestion.question + '<br>' + answersHTML;
 }
 showQuestion(questions[currentQuestion]);
 
