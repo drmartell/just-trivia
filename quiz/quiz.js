@@ -1,12 +1,25 @@
 import { shuffle } from '../common/utils.js';
 import { bossesDict } from '../data/boss-data.js';
-import { questions } from '../data/quiz-data.js';
+//import { questions } from '../data/quiz-data.js';
 import { OPPONENT_KEY, USER_KEY } from '../home/home.js';
-import { getPlayer, savePlayer } from '../data/api.js';
+import { getPlayer, savePlayer, getQuestions } from '../data/api.js';
 import { updateHeader } from '../common/header.js';
 
 const searchParams = new URLSearchParams(window.location.search);
 const bossId = searchParams.get('boss');
+//here I'm replacing the static question array with an API call
+let questions = getQuestions();
+console.log(questions);
+
+function sleep(milliseconds) {
+    var start = new Date().getTime();
+    for (var i = 0; i < 1e7; i++) {
+        if ((new Date().getTime() - start) > milliseconds){
+            break;
+        }
+    }
+}
+sleep(2000);
 
 if (!bossId) window.location = '../';
 
@@ -21,6 +34,7 @@ let currentQuestion = 0;
 // generateQuiz(questions, quizContainer, resultsContainer, submitButton);
 function showQuestion(thisQuestion) {
     let answersHTML = '';
+    //debugger
     const possibleAnswers = thisQuestion.incorrect_answers;
     possibleAnswers.push(thisQuestion.correct_answer);
     shuffle(possibleAnswers);
