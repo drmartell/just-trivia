@@ -1,0 +1,72 @@
+
+
+    HTML CSS JS 
+
+    Result 
+
+EDIT ON
+
+body{
+    font-size: 20px;
+    font-family: sans-serif;
+    color: #333;
+}
+.question{
+    font-weight: 600;
+}
+.answers {
+    margin-bottom: 20px;
+}
+#submit{
+    font-family: sans-serif;
+    font-size: 20px;
+    background-color: #297;
+    color: #fff;
+    border: 0px;
+    border-radius: 3px;
+    padding: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+#submit:hover{
+    background-color: #3a8;
+}
+
+ul {
+    list-style: circle;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    float: none;
+}
+
+input[type="radio"] {
+    visibility: visible;
+}
+
+label {
+    display: block;
+    margin: 0 12px;
+    cursor: pointer;
+}
+
+#quiz {
+    display: inline-block;
+    width: 40%;
+}
+
+#quiz-boss {
+    display: inline-block;
+    width: 40%;
+}
+
+#quiz-boss > label > input[type="radio"] {
+    /* list-style-type : none; */
+    /* visibility: hidden; */
+}
+
+#quiz-boss > label + input:checked {
+    background: rgb(11, 150, 115);
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootcamp-inator</title>
+    <link rel="stylesheet" href="./common/_resets.css">
+    <link rel="stylesheet" href="./common/main.css">
+    <link rel="stylesheet" href="./home/home.css">
+</head>
+<body>
+    <script type="module" src="./common/header.js"></script>
+    <header></header>
+    
+    <main>
+        <h2>
+            Join the fallen...
+        </h2>
+        <form id="user-sign-up">
+            <p class="text-prompt">
+                <label for="name">Enter Your Name Below:</label>
+                <input id="name" name="name" required>
+            </p>
+            <fieldset>
+                <legend>Whom would you like to challenge?</legend>
+                <i>Any similarity to any person living or dead is merely coincidental.</i>
+                <p id="avatars">
+                    <label>
+                        <input type="radio" name="opponent" required value="boss1">
+                        <img id="boss1-img" src="assets/images/bc-nerd.png">
+                        Self-taught programmer
+                    </label>
+                    <label>
+                        <input type="radio" name="opponent" required value="boss2" disabled>
+                        <img id="boss2-img" src="assets/images/alchemy-nerd.png">
+                        Fellow bootcamper
+                    </label>
+                    <label>
+                        <input type="radio" name="opponent" required value="boss3" disabled>
+                        <img id="boss3-img" src="assets/images/trivia-nerd.png">
+                        CS Degree holder
+                    </label>
+                </p>
+            </fieldset>
+            <button>It's Just A Quiz...</button>
+        </form>
+    </main>
+
+    <footer>
+        <cite>
+            Cobbled together @<a href="https://www.alchemycodelab.com/">alchemycodelab</a> by Canadian Casey
+        </cite>
+    </footer>
+
+    <script type="module" src="./home/home.js"></script>
+</body>
+</html>
