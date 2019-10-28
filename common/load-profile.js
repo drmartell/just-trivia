@@ -1,5 +1,4 @@
 import { getPlayer } from '../data/api.js';
-import isDead from './is-dead.js';
 import { USER_KEY } from '../home/home.js';
 
 function loadProfile() {
@@ -16,8 +15,7 @@ function loadProfile() {
     avatar.src = '../assets/avatars/' + user.race + '.png';
     gold.textContent = user.gold;
 
-    if (isDead(user)) hp.textContent = 'DOA';
-    else hp.textContent = user.hp;
+    hp.textContent = user.hp;
 }
 
 export default loadProfile;
